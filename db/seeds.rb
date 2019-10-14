@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 cities = City.create([{name: 'New York'}, {name:'Boston'}, {name: 'San-Francisco'}])
+plans = Plan.create([{name: 'A', price: 75},
+                    {name: 'B', price: 95},
+                    {name: 'C', price: 150}])
 customers = Customer.create([{name: 'Jacob', surname: 'Davis', city: cities[0]},
                             {name: 'Mason', surname: 'Miller', city: cities[0]},
                             {name: 'Emma', surname: 'White', city: cities[1]},
@@ -14,13 +17,13 @@ customers = Customer.create([{name: 'Jacob', surname: 'Davis', city: cities[0]},
                             {name: 'Grace', surname: 'Hill', city: cities[2]},
                             {name: 'Daniel', surname: 'Baker', city: cities[2]}])
 
-numbers = Number.create([{number: '12345987878', customer:customers[0]},
-                        {number: '78457845412', customer:customers[0]},
-                        {number: '32789876465', customer: customers[1]},
-                        {number: '78946489785', customer: customers[2]},
-                        {number: '54649845465', customer: customers[3]},
-                        {number: '54287455546', customer: customers[4]},
-                        {number: '89745645656', customer: customers[5]}])
+numbers = Number.create([{number: '12345987878', customer:customers[0], plan: plans[0]},
+                        {number: '78457845412', customer:customers[0], plan: plans[1]},
+                        {number: '32789876465', customer: customers[1], plan: plans[1]},
+                        {number: '78946489785', customer: customers[2], plan: plans[2]},
+                        {number: '54649845465', customer: customers[3], plan: plans[0]},
+                        {number: '54287455546', customer: customers[4], plan: plans[2]},
+                        {number: '89745645656', customer: customers[5], plan: plans[1]}])
 
 calls = Call.create([{source_number: numbers[0], target_number: numbers[2], call_length: 20, time: Time.now},
                      {source_number: numbers[0], target_number: numbers[3], call_length: 15, time: Time.now},

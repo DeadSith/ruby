@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_115405) do
+ActiveRecord::Schema.define(version: 2019_10_14_174604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_10_14_115405) do
   create_table "calls", force: :cascade do |t|
     t.integer "call_length"
     t.datetime "time", default: -> { "CURRENT_TIMESTAMP" }
-    t.bigint "source_number_id"
-    t.bigint "target_number_id"
+    t.bigint "source_number_id", null: false
+    t.bigint "target_number_id", null: false
     t.index ["source_number_id"], name: "index_calls_on_source_number_id"
     t.index ["target_number_id"], name: "index_calls_on_target_number_id"
   end
@@ -38,7 +38,14 @@ ActiveRecord::Schema.define(version: 2019_10_14_115405) do
   create_table "numbers", force: :cascade do |t|
     t.string "number", null: false
     t.bigint "customer_id"
+    t.bigint "plan_id", null: false
     t.index ["customer_id"], name: "index_numbers_on_customer_id"
+    t.index ["plan_id"], name: "index_numbers_on_plan_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
   end
 
 end
