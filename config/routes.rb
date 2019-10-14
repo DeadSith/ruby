@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :customers
   resources :cities
   resources :calls
+  resources :plans
 end

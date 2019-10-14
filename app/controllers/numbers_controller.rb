@@ -69,6 +69,6 @@ class NumbersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def number_params
-      params.fetch(:number, {})
+      params.require(:number).permit(:number, :customer, :plan)
     end
 end

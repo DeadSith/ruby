@@ -69,6 +69,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.fetch(:plan, {})
+      params.require(:plan).permit(:name, :price)
     end
 end

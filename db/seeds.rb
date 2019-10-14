@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 cities = City.create([{name: 'New York'}, {name:'Boston'}, {name: 'San-Francisco'}])
-plans = Plan.create([{name: 'A', price: 75},
-                    {name: 'B', price: 95},
-                    {name: 'C', price: 150}])
+
+plans = Plan.create([{name: 'Plan A', price: 75},
+                    {name: 'Plan B', price: 95},
+                    {name: 'Plan C', price: 150}])
+
 customers = Customer.create([{name: 'Jacob', surname: 'Davis', city: cities[0]},
                             {name: 'Mason', surname: 'Miller', city: cities[0]},
                             {name: 'Emma', surname: 'White', city: cities[1]},

@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +14,11 @@
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
-        <td><%= link_to 'Show', plan %></td>
+        <td><%= plan.name %></td>
+        <td><%= plan.price %></td>
+        <td><%= link_to 'View', plan %></td>
         <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
-        <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
