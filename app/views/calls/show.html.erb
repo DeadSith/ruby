@@ -1,4 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+<dl>
+  <dt>
+    Caller:
+  </dt>
+  <dd>
+    <%=link_to @call.source_number.number, @call.source_number %>
+  </dd>
+  <dt>
+    Callee:
+  </dt>
+  <dd>
+    <%=link_to @call.target_number.number, @call.target_number %>
+  </dd>
+  <dt>
+    Time:
+  </dt>
+  <dd>
+    <%=@call.time %>
+  </dd>
+  <dt>
+    Length:
+  </dt>
+  <dd>
+    <%=@call.call_length %>
+  </dd>
+</dl>
+
 <%= link_to 'Edit', edit_call_path(@call) %> |
-<%= link_to 'Back', calls_path %>
+<%= link_to 'All calls', calls_path %>

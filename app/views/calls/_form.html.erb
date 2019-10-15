@@ -11,6 +11,25 @@
     </div>
   <% end %>
 
+  <div class="fields">
+    <p>
+      <%= form.label :source_number%>
+      <%= form.collection_select :source_number_id, Number.all, :id, :number %>
+    </p>
+    <p>
+      <%= form.label :target_number%>
+      <%= form.collection_select :target_number_id, Number.all, :id, :number %>
+    </p>
+    <p>
+      <%= form.label :call_length%>
+      <%= form.number_field :call_length%>
+    </p>
+    <p>
+      <%= form.label :time%>
+      <%= form.datetime_select :time%>
+    </p>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
