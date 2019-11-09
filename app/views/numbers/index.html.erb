@@ -19,8 +19,10 @@
         <td><%= number.customer.name %> <%= number.customer.surname %></td>
         <td><%= number.plan.name %></td>
         <td><%= link_to 'View', number %></td>
-        <td><%= link_to 'Edit', edit_number_path(number) %></td>
-        <td><%= link_to 'Delete', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if  admin_user_signed_in? %>
+          <td><%= link_to 'Edit', edit_number_path(number) %></td>
+          <td><%= link_to 'Delete', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Number', new_number_path %>
+<% if  admin_user_signed_in? %>
+  <%= link_to 'New Number', new_number_path %>
+<% end %>

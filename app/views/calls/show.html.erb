@@ -27,5 +27,7 @@
   </dd>
 </dl>
 
-<%= link_to 'Edit', edit_call_path(@call) %> |
+<% if  admin_user_signed_in? %>
+  <%= link_to 'Edit', edit_call_path(@call) %> |
+<% end %>
 <%= link_to 'All calls', calls_path %>

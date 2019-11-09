@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, :except => [:index, :show]
 
   # GET /cities
   # GET /cities.json

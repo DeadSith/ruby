@@ -1,4 +1,9 @@
 class Number < ApplicationRecord
+
+  def display_name
+    number
+  end
+
   validates :number,   :presence => {:message => 'Phone number is required.'},
             :numericality => true,
             :length => { :minimum => 10, :maximum => 15 }

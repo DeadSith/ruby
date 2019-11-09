@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, :except => [:index, :show]
 
   # GET /plans
   # GET /plans.json

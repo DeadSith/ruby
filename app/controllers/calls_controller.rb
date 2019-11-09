@@ -1,5 +1,6 @@
 class CallsController < ApplicationController
   before_action :set_call, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, :except => [:index, :show]
 
   # GET /calls
   # GET /calls.json

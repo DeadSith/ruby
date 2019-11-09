@@ -1,5 +1,6 @@
 class NumbersController < ApplicationController
   before_action :set_number, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, :except => [:index, :show]
 
   # GET /numbers
   # GET /numbers.json

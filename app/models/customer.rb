@@ -1,4 +1,9 @@
 class Customer < ApplicationRecord
+
+  def display_name
+    name + ' ' + surname
+  end
+
   validates :name, :presence => true,
             :length => {minimum: 1, maximum: 20}
 
