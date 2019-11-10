@@ -3,4 +3,12 @@ class AdminUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, 
          :rememberable, :validatable
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end

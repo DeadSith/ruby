@@ -40,4 +40,4 @@ calls = Call.create([{source_number: numbers[0], target_number: numbers[2], call
                      {source_number: numbers[4], target_number: numbers[1], call_length: 37, time: Time.now},
                      {source_number: numbers[5], target_number: numbers[2], call_length: 61, time: Time.now},
                      {source_number: numbers[5], target_number: numbers[0], call_length: 8, time: Time.now}])
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
